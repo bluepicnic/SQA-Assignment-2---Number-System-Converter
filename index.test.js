@@ -1,5 +1,7 @@
 const {} = require('./script.js')
 
+//test
+
 describe("Smoke test", () => {
     it('Should be truthy', () => {
         expect(1).toBeTruthy();
