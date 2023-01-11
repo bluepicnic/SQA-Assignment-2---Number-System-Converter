@@ -1,4 +1,4 @@
-const {} = require('./script.js')
+const { hello } = require('./script.js')
 
 //test3
 describe("Smoke test", () => {
