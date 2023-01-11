@@ -1,11 +1,10 @@
-name: Node.js CI
+name: Node.js
 on: [pull_request]
 jobs:
   build:
-    name: Review pull request code
+    name: Review code
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
