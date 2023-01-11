@@ -20,15 +20,27 @@ Integration testing - CICD
 ## TDD
 #### Test Requirements
 - User is able to input numbers (and only numbers) into the input field
-- "Convert to decimal" button press triggers JS function and d
+- "Convert to decimal" button press triggers decimal conversion JS function
+- "Convert to binary" button press triggers binary conversion JS function 
+- Output field displays decimial conversion result in Binary
+- Output field displays binary conversion conversion result as decimal
+- Decimal to Binary input field will refuse conversion if a number is not detected
+- Binary to decimal input field will refuse conversion if a binary number is not detected
+
+We adopted test driven development as our software development process in order to write quality tests for our code and emphasise our focus on requirements. This aliged with the processes we were following within our github repository, as we ensured we had a CI/CD workflow within github actions  and a number of issues to track progress with. 
+
+Tests were written prior to implementing any functionality
 
 
 
 ### Stand Up - 11/01 
 Commit and pull request review of initial commit 
+
 Pull request was sizeable, but only due to the installation of various package modules
+
 Git strategy going forward - keeping various branches until we're sure they're not needed anymore
 Setup of Merge Request Rules and first pass of coding standards
+
 Agreed use of GitHub issues
 
 ### Coding standards
