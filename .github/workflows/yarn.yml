@@ -1,14 +1,17 @@
-name: Node.js
+name: Node.js CI
 on: [pull_request]
 jobs:
   build:
-    name: install deps
+    name: Review pull request code
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
+        
+      - name: jest unit testing
       - run: |
           yarn install
           yarn test
