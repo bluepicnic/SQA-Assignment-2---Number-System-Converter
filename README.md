@@ -5,9 +5,9 @@ Assignment work
 Smoke test
 Number is captured through input 
 Button press successfully triggers function
-Number converted to 1 bit
-Number converted to 2 bits
-Number converted to 3 bits
+Number converted to 1 bit - Expected 1
+Number converted to 2 bits - 2/3 expected
+Number converted to 3 bits - 4/5/6/7/8
 Number converted to 4 bits
 Number converted to 5 bits
 Number converted to 6 bits
@@ -19,6 +19,8 @@ Integration testing - CICD
 
 ## TDD
 #### Test Requirements
+
+##### UI Test
 - User is able to input numbers (and only numbers) into the input field
 - "Convert to decimal" button press triggers decimal conversion JS function
 - "Convert to binary" button press triggers binary conversion JS function 
@@ -27,9 +29,9 @@ Integration testing - CICD
 - Decimal to Binary input field will refuse conversion if a number is not detected
 - Binary to decimal input field will refuse conversion if a binary number is not detected
 
-We adopted test driven development as our software development process in order to write quality tests for our code and emphasise our focus on requirements. This aliged with the processes we were following within our github repository, as we ensured we had a CI/CD workflow within github actions  and a number of issues to track progress with. 
+We adopted Test Driven Development (TDD) as our software development process in order to write quality tests for our code and emphasise our focus on requirements. This aliged with the processes we were following within our github repository, as we ensured we had a CI/CD workflow within github actions  and a number of issues to track progress with. 
 
-Tests were written prior to implementing any functionality
+Tests were written prior to implementing any functionality in order to adhere to TDD at each stage of development. Before developing the front end, we drafted various tests to potentially be used later in development. These tests were later refined before implementing any javascript code related to functionality, and were added as unit tests to the *index.jest.js* file.
 
 
 
