@@ -2,3 +2,10 @@ html, body {
   height: 100%;
   width: 100%;
 }
+
+p {
+  position: relative;
+  display: inline;
+  margin-left: 1em;
+}
+

@@ -1,0 +1,15 @@
+name: Node.js
+on: [pull_request]
+jobs:
+  build:
+    name: Review code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: |
+          yarn install
+          yarn add -D jest-environment-jsdom
+          yarn test
