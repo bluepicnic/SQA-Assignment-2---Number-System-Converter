@@ -19,8 +19,53 @@ Integration testing - CICD
 
 ## TDD
 #### Test Requirements
+We adopted Test Driven Development (TDD) as our software development process in order to write quality tests for our code and emphasise our focus on requirements. This aliged with the processes we were following within our github repository, as we ensured we had a CI/CD workflow within github actions  and a number of issues to track progress with. 
 
-##### UI Test
+Tests were written prior to implementing any functionality in order to adhere to TDD at each stage of development. Before developing the front end, we drafted various tests to potentially be used later in development. These tests were later refined before implementing any javascript code related to functionality, and were added as unit tests to the *index.jest.js* file.
+<table>
+  <tbody align="center">
+    <tr>
+      <th>No.</th>
+      <th>Actions</th>
+      <th>Steps</th>
+      <th>Expected Outcome</th>
+      <th>Actual Outcome</th>
+      <th>Test result</th>
+    </tr>
+    <tr>
+      <td>1.</td>
+      <td>Number is captured through input</td>
+      <td>
+        <ol>
+          <li>User clicks on the input field</li>
+          <li>User enters </li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td>col 2 is</td>
+      <td>centered</td>
+      <td>$12</td>
+    </tr>
+    <tr>
+      <td>zebra stripes</td>
+      <td>are neat</td>
+      <td>$1</td>
+    </tr>
+    <tr>
+      <td>
+        <ul>
+          <li>item1</li>
+          <li>item2</li>
+        </ul>
+      </td>
+      <td>See the list</td>
+      <td>from the first column</td>
+    </tr>
+  </tbody>
+</table>
+
+##### UI Tests
 - User is able to input numbers (and only numbers) into the input field
 - "Convert to decimal" button press triggers decimal conversion JS function
 - "Convert to binary" button press triggers binary conversion JS function 
@@ -29,9 +74,7 @@ Integration testing - CICD
 - Decimal to Binary input field will refuse conversion if a number is not detected
 - Binary to decimal input field will refuse conversion if a binary number is not detected
 
-We adopted Test Driven Development (TDD) as our software development process in order to write quality tests for our code and emphasise our focus on requirements. This aliged with the processes we were following within our github repository, as we ensured we had a CI/CD workflow within github actions  and a number of issues to track progress with. 
 
-Tests were written prior to implementing any functionality in order to adhere to TDD at each stage of development. Before developing the front end, we drafted various tests to potentially be used later in development. These tests were later refined before implementing any javascript code related to functionality, and were added as unit tests to the *index.jest.js* file.
 
 
 
