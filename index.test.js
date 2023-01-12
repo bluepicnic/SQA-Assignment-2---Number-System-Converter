@@ -23,6 +23,12 @@ describe("Binary to Decimal tests", () => {
   }),
   it('Should convert to 10', () => {
     expect(BinToDecConversion('1010')).toBe(10);
+  }),
+  it('Should return NaN if not a number', () => {
+    expect(BinToDecConversion('hello')).toBe('Error, enter a valid input')
+  }),
+    it('Should return Error, enter a valid input', () => {
+    expect(BinToDecConversion(3131)).toBe('Error, enter a valid input')
   })
 })
 
