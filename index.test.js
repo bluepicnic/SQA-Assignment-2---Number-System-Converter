@@ -1,6 +1,4 @@
-const { BinToDecConversion } = require('./index.js')
-
-
+const { BinToDecConversion, DecToBinConversion } = require('./index.js')
 
 describe("Smoke test", () => {
     it('Should be truthy', () => {

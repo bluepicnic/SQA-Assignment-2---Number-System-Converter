@@ -14,7 +14,7 @@ function isBinary(str) {
 
 function isDecimal(str) {
   const regex = new RegExp('^[0-9]+$');
-  return str.match(regex) ? true : false;
+  return String(str).match(regex) ? true : false;
 }
 
 function stripZeros(str) {
@@ -55,5 +55,8 @@ if (BinToDecSubmit != null && BinToDecField != null && BinToDecResult != null) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { BinToDecConversion };
+  module.exports = { 
+    BinToDecConversion, 
+    DecToBinConversion
+  };
 }
