@@ -8,15 +8,8 @@ const BinToDecField = document.querySelector('.bin-to-dec-field');
 const BinToDecResult = document.querySelector('.bin-to-dec-result');
 
 function checkString(str) {
-  let isBinary = false;
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] == "0" || str[i] == "1") {
-      isBinary = true;
-    } else {
-      isBinary = false;
-    }
-  }
-  return isBinary;
+  const regex = new RegExp('^[0-1]+$');
+  return str.match(regex) ? true : false;
 }
 
 function BinToDecConversion(value) {
