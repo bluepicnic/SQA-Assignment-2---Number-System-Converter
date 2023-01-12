@@ -11,4 +11,5 @@ jobs:
           node-version: '14'
       - run: |
           yarn install
+          yarn add -D jest-environment-jsdom
           yarn test
