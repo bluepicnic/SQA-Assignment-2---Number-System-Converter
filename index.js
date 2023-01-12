@@ -7,33 +7,50 @@ const BinToDecSubmit = document.querySelector('.bin-to-dec-submit');
 const BinToDecField = document.querySelector('.bin-to-dec-field');
 const BinToDecResult = document.querySelector('.bin-to-dec-result');
 
-function checkString(str) {
+function isBinary(str) {
   const regex = new RegExp('^[0-1]+$');
   return str.match(regex) ? true : false;
 }
 
+function isDecimal(str) {
+  const regex = new RegExp('^[0-9]+$');
+  return str.match(regex) ? true : false;
+}
+
+function stripZeros(str) {
+  return str.replace(/\D|^0+/g, "")
+}
+
 function BinToDecConversion(value) {
-  if (!checkString(value)) {
-      return "Error, enter a valid input"
-    }
+  if (!isBinary(value))
+    return "Error, enter a valid input"
+  
   return parseInt(value, 2);
 }
 
 function DecToBinConversion(value) {
-  return '1';
+  if (!isDecimal(value))
+    return "Error, enter a valid input"
+
+  let int = parseInt(value);
+  return int.toString(2);
 }
 
 if (DecToBinSubmit != null && DecToBinField != null && DecToBinResult != null) {
   DecToBinSubmit.addEventListener('click', () => {
     let value = DecToBinField.value;
-    DecToBinResult.innerHTML = DecToBinConversion(value);
+
+    let strippedZeros = stripZeros(value);
+    DecToBinField.value = strippedZeros;
+    
+    DecToBinResult.innerHTML = DecToBinConversion(strippedZeros);
   })
 }
 
 if (BinToDecSubmit != null && BinToDecField != null && BinToDecResult != null) {
   BinToDecSubmit.addEventListener('click', () => {
     let value = BinToDecField.value;
-      BinToDecResult.innerHTML = BinToDecConversion(value);
+    BinToDecResult.innerHTML = BinToDecConversion(value);
   })
 }
 
