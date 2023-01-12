@@ -10,6 +10,14 @@ const BinToDecSubmit = document.querySelector('.bin-to-dec-submit');
 const BinToDecField = document.querySelector('.bin-to-dec-field');
 const BinToDecResult = document.querySelector('.bin-to-dec-result');
 
+function BinToDecConversion(value) {
+  return 1;
+}
+
+function DecToBinConversion(value) {
+  return '1';
+}
+
 if (DecToBinSubmit != null && DecToBinField != null && DecToBinResult != null) {
   DecToBinSubmit.addEventListener('click', () => {
     let value = DecToBinField.value;
