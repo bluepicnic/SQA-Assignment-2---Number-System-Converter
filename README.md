@@ -26,6 +26,7 @@ Tests were written prior to implementing any functionality in order to adhere to
   <tbody align="center">
     <tr>
       <th>No.</th>
+      <th>Test Type</th>
       <th>Actions</th>
       <th>Steps</th>
       <th>Expected Outcome</th>
@@ -34,33 +35,92 @@ Tests were written prior to implementing any functionality in order to adhere to
     </tr>
     <tr>
       <td>1.</td>
+      <td>Manual/UI
       <td>Number is captured through input</td>
       <td>
         <ol>
-          <li>User clicks on the input field</li>
-          <li>User enters </li>
+          <li>Clicks on the input field</li>
+          <li>Enter number into field</li>
         </ol>
       </td>
+      <td>The input field should contain the entered number</td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <td>col 2 is</td>
-      <td>centered</td>
-      <td>$12</td>
-    </tr>
-    <tr>
-      <td>zebra stripes</td>
-      <td>are neat</td>
-      <td>$1</td>
-    </tr>
-    <tr>
+      <td>2.</td>
+      <td>Manual/UI</td>
+      <td>"Convert to binary" button press converts decimal number in input field to binary</td>
       <td>
-        <ul>
-          <li>item1</li>
-          <li>item2</li>
-        </ul>
+        <ol>
+          <li>Click on the decimal input field, under the relevant heading</li>
+          <li>Enter decimal number into field</li>
+          <li>Click "convert to binary" button</li>
+        </ol>
       </td>
-      <td>See the list</td>
-      <td>from the first column</td>
+      <td>Relevant output field should contain converted decimal number expressed as a binary number </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td>Manual/UI</td>
+      <td>"Convert to decimal" button press converts binary number in input field to decimal</td>
+      <td>
+        <ol>
+          <li>Click on the binary input field, under the relevant heading</li>
+          <li>Enter binary number into field</li>
+          <li>Click "convert to decimal" button</li>
+        </ol>
+      </td>
+      <td>Relevant output field should contain converted binary number expressed as a decimal number </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+     <td>4.</td>
+      <td>Manual/UI</td>
+      <td>Error message alert appears when trying to convert binary number using "convert to binary" button and field</td>
+      <td>
+        <ol>
+          <li>Click on the binary input field</li>
+          <li>Enter binary number into relevant field</li>
+          <li>Click "convert to binary" button</li>
+        </ol>
+      </td>
+      <td>Alert error message should appear with text "You cannot convert a binary number to binary!" </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+     <td>5.</td>
+      <td>Manual/UI</td>
+      <td>Error message alert appears when trying to convert decimal number using "convert to decimal" button and field</td>
+      <td>
+        <ol>
+          <li>Click on the decimal input field</li>
+          <li>Enter decimal number into relevant field</li>
+          <li>Click "convert to decimal" button</li>
+        </ol>
+      </td>
+      <td>Alert error message should appear with text "You cannot convert a decimal number to decimal!" </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+     <td>6.</td>
+      <td>Manual/UI</td>
+      <td>Error message alert appears when trying to enter non-numbers into decimal input field</td>
+      <td>
+        <ol>
+          <li>Click on the decimal input field</li>
+          <li>Enter text string with non-numbers into field</li>
+          <li>Click "convert to decimal" or "convert to binary", depending  button</li>
+        </ol>
+      </td>
+      <td>Alert error message should appear with text "You cannot convert a decimal number to decimal!" </td>
+      <td></td>
+      <td></td>
     </tr>
   </tbody>
 </table>
