@@ -1,4 +1,5 @@
-const { hello, BinToDecConversion } = require('./index.js')
+const { BinToDecConversion } = require('./index.js')
+
 
 
 describe("Smoke test", () => {
@@ -8,19 +9,19 @@ describe("Smoke test", () => {
 });
 
 describe("Binary to Decimal tests", () => {
-  it.skip('Should convert to 50', () => {
+  it('Should convert to 50', () => {
     expect(BinToDecConversion('110010')).toBe(50);
   }),
-  it.skip('Should convert to 15', () => {
+  it('Should convert to 15', () => {
     expect(BinToDecConversion('1111')).toBe(15);
   }),
-  it.skip('Should convert to 101', () => {
+  it('Should convert to 101', () => {
     expect(BinToDecConversion('1100101')).toBe(101);
   }),
-  it.skip('Should convert to 255', () => {
+  it('Should convert to 255', () => {
     expect(BinToDecConversion('11111111')).toBe(255);
   }),
-  it.skip('Should convert to 10', () => {
+  it('Should convert to 10', () => {
     expect(BinToDecConversion('1010')).toBe(10);
   })
 })

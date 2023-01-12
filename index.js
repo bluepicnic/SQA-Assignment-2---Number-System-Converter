@@ -1,6 +1,3 @@
-function hello(num) {
-    return num;
-}
 
 const DecToBinSubmit = document.querySelector('.dec-to-bin-submit');
 const DecToBinField = document.querySelector('.dec-to-bin-field');
@@ -11,7 +8,7 @@ const BinToDecField = document.querySelector('.bin-to-dec-field');
 const BinToDecResult = document.querySelector('.bin-to-dec-result');
 
 function BinToDecConversion(value) {
-  return 1;
+  return parseInt(value, 2);
 }
 
 function DecToBinConversion(value) {
@@ -33,4 +30,6 @@ if (BinToDecSubmit != null && BinToDecField != null && BinToDecResult != null) {
 }
 
 
-
+if (typeof module !== 'undefined') {
+  module.exports = { BinToDecConversion };
+}
