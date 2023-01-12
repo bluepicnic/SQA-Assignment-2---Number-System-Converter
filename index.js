@@ -10,13 +10,19 @@ const BinToDecSubmit = document.querySelector('.bin-to-dec-submit');
 const BinToDecField = document.querySelector('.bin-to-dec-field');
 const BinToDecResult = document.querySelector('.bin-to-dec-result');
 
-DecToBinSubmit.addEventListener('click', () => {
+if (DecToBinSubmit != null && DecToBinField != null && DecToBinResult != null) {
+  DecToBinSubmit.addEventListener('click', () => {
     let value = DecToBinField.value;
     DecToBinResult.innerHTML = hello(value);
-})
+  })
+}
 
-BinToDecSubmit.addEventListener('click', () => {
+if (BinToDecSubmit != null && BinToDecField != null && BinToDecResult != null) {
+  BinToDecSubmit.addEventListener('click', () => {
     let value = BinToDecField.value;
     BinToDecResult.innerHTML = hello(value);
-})
+  })
+}
+
+
 
