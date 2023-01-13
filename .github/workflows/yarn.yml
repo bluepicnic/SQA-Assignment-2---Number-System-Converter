@@ -1,4 +1,5 @@
 name: Node.js
+# Runs upon pull request creation
 on: [pull_request]
 jobs:
   build:
@@ -9,6 +10,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
+          # Set up for running tests
+          # Installs yarn and sets up jsdom environment
+          # Runs yarn test to run unit tests
       - run: |
           yarn install
           yarn add -D jest-environment-jsdom
