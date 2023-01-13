@@ -18,8 +18,16 @@ function isDecimal(str) {
 }
 
 function stripZeros(str) {
+  str = roundInt(str)
   return str.replace(/\D|^0+/g, "")
 }
+
+function roundInt(str) {
+  let value = parseInt(str)
+  value = Math.floor(value)
+  return value.toString()
+}
+
 
 function BinToDecConversion(value) {
   if (!isBinary(value))
