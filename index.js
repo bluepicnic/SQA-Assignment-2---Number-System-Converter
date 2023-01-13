@@ -9,7 +9,7 @@ const BinToDecResult = document.querySelector('.bin-to-dec-result');
 
 function isBinary(str) {
   const regex = new RegExp('^[0-1]+$');
-  return str.match(regex) ? true : false;
+  return  String(str).match(regex) ? true : false;
 }
 
 function isDecimal(str) {
