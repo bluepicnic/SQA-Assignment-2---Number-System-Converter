@@ -1,11 +1,33 @@
-html, body {
-  height: 100%;
-  width: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  background-color: #222222;
+  font-family: 'Inter', sans-serif;
+  color: #FFFFFF;
 }
 
 p {
   position: relative;
   display: inline;
   margin-left: 1em;
+}
+
+input, button {
+  background-color: #222222;
+  border: 1px solid #c2c2c2;
+  border-radius: 4px;
+  color: #FFFFFF;
+  outline: none;
+  padding: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #c2c2c2;
+  color: #222222;
+}
+
+.conversion-container {
+  text-align: center;
 }
 
