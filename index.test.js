@@ -46,5 +46,32 @@ describe("Decimal to binary tests ", () => {
   it('Should convert to 1010', () => {
     expect(DecToBinConversion(10)).toBe('1010');
   })
+  it('Should convert to 11001', () => {
+    expect(DecToBinConversion(25.65)).toBe('11001');
+  })
+  it('Should convert to 1000101', () => {
+    expect(DecToBinConversion(-69)).toBe('1000101');
+  })
 })
+
+describe("Number system helper functions"), () => {
+  it('Should not be recognised as a binary number and return false', () => {
+    expect(isBinary("271924")).toBe(false);
+  }),
+  it('Should be recognised as a binary number and return true', () => {
+    expect(isBinary("11110000")).toBe(true);
+  }),
+  it('Should be recognised as a decimal number and return true', () => {
+    expect(isDecimal("123")).toBe(true);
+  }),
+  it('Should not be recognised as a decimal number and return false', () => {
+    expect(isDecimal("jsdjdsajsda")).toBe(false);
+  }),
+  it('Should convert to 110010 removing all the leading zeros', () => {
+    expect(stripZeros('00110010')).toBe('110010');
+  }),
+  it('Should convert to 35 rounding the number for binary conversion ', () => {
+    expect(roundInt('35.7')).toBe('35');
+  })
+}
 
