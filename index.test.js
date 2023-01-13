@@ -6,6 +6,7 @@ describe("Smoke test", () => {
     })
 });
 
+//Binary to decimal conversion function unit tests
 describe("Binary to Decimal tests", () => {
   it('Should convert to 50', () => {
     expect(BinToDecConversion('110010')).toBe(50);
@@ -22,7 +23,9 @@ describe("Binary to Decimal tests", () => {
   it('Should convert to 10', () => {
     expect(BinToDecConversion('1010')).toBe(10);
   }),
-  it('Should return Error, enter a valid input', () => {
+    
+  /* functions below only deal with conversion, not input validation, so will return error rather than correct value*/
+  it('Should return Error, enter a valid input', () => { 
     expect(BinToDecConversion('hello')).toEqual(expect.stringContaining('Error, enter a valid input'))
   }),
     it('Should return Error, enter a valid input', () => {
@@ -30,6 +33,7 @@ describe("Binary to Decimal tests", () => {
   })
 })
 
+//Decimal to binary conversion function unit tests
 describe("Decimal to binary tests ", () => {
   it('Should convert to 110010', () => {
     expect(DecToBinConversion(50)).toBe('110010');
@@ -54,6 +58,7 @@ describe("Decimal to binary tests ", () => {
   })
 });
 
+//input validation function unit tests
 describe("Number system helper functions", () => {
   it('Should not be recognised as a binary number and return false', () => {
     expect(isBinary("271924")).toBeFalsy();
