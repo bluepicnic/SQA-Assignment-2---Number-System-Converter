@@ -37,8 +37,9 @@ function BinToDecConversion(value) {
 }
 
 function DecToBinConversion(value) {
-  if (!isDecimal(value))
+  if (!isDecimal(value)){
     return "Error, enter a valid input"
+  }
 
   let int = parseInt(value);
   return int.toString(2);
@@ -65,6 +66,10 @@ if (BinToDecSubmit != null && BinToDecField != null && BinToDecResult != null) {
 if (typeof module !== 'undefined') {
   module.exports = { 
     BinToDecConversion, 
-    DecToBinConversion
+    DecToBinConversion,
+    isBinary,
+    isDecimal,
+    stripZeros,
+    roundInt
   };
 }

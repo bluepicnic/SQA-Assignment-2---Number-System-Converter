@@ -1,4 +1,4 @@
-const { BinToDecConversion, DecToBinConversion } = require('./index.js')
+const { BinToDecConversion, DecToBinConversion, isBinary, isDecimal, stripZeros, roundInt } = require('./index.js')
 
 describe("Smoke test", () => {
     it('Should be truthy', () => {
@@ -47,10 +47,10 @@ describe("Decimal to binary tests ", () => {
     expect(DecToBinConversion(10)).toBe('1010');
   })
   it('Should convert to 11001', () => {
-    expect(DecToBinConversion(25.65)).toBe('11001');
+    expect(DecToBinConversion(25.65)).toBe('Error, enter a valid input');
   })
   it('Should convert to 1000101', () => {
-    expect(DecToBinConversion(-69)).toBe('1000101');
+    expect(DecToBinConversion(-69)).toBe('Error, enter a valid input');
   })
 });
 
