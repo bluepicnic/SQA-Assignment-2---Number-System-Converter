@@ -24,6 +24,10 @@
     pkgs.yarn
     pkgs.yarn
     pkgs.yarn
+    pkgs.yarn
+    pkgs.yarn
+    pkgs.yarn
+    pkgs.yarn
     pkgs.nodejs-16_x
     pkgs.yarn install
     pkgs.nodejs-16_x

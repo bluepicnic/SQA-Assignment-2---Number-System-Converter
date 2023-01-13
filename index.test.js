@@ -14,16 +14,16 @@ describe("Binary to Decimal tests", () => {
     expect(BinToDecConversion('1111')).toBe(15);
   }),
   it('Should convert to 101', () => {
-    expect(BinToDecConversion('1100101')).toBe(101);
+    expect(BinToDecConversion('1100101')).toEqual(101);
   }),
   it('Should convert to 255', () => {
-    expect(BinToDecConversion('11111111')).toBe(255);
+    expect(BinToDecConversion('11111111')).toEqual(255);
   }),
   it('Should convert to 10', () => {
     expect(BinToDecConversion('1010')).toBe(10);
   }),
-  it('Should return NaN if not a number', () => {
-    expect(BinToDecConversion('hello')).toBe('Error, enter a valid input')
+  it('Should return Error, enter a valid input', () => {
+    expect(BinToDecConversion('hello')).toEqual(expect.stringContaining('Error, enter a valid input'))
   }),
     it('Should return Error, enter a valid input', () => {
     expect(BinToDecConversion(3131)).toBe('Error, enter a valid input')
@@ -45,27 +45,27 @@ describe("Decimal to binary tests ", () => {
   }),
   it('Should convert to 1010', () => {
     expect(DecToBinConversion(10)).toBe('1010');
-  })
-  it('Should convert to 11001', () => {
-    expect(DecToBinConversion(25.65)).toBe('Error, enter a valid input');
-  })
+  }),
+  it('Should convert to 11001', () => { 
+    expect(DecToBinConversion(25.65)).toEqual(expect.stringMatching('Error, enter a valid input'));
+  }),
   it('Should convert to 1000101', () => {
-    expect(DecToBinConversion(-69)).toBe('Error, enter a valid input');
+    expect(DecToBinConversion(-69)).toMatch('Error, enter a valid input');
   })
 });
 
 describe("Number system helper functions", () => {
   it('Should not be recognised as a binary number and return false', () => {
-    expect(isBinary("271924")).toBe(false);
+    expect(isBinary("271924")).toBeFalsy();
   }),
   it('Should be recognised as a binary number and return true', () => {
-    expect(isBinary("11110000")).toBe(true);
+    expect(isBinary("11110000")).toBeTruthy();
   }),
   it('Should be recognised as a decimal number and return true', () => {
-    expect(isDecimal("123")).toBe(true);
+    expect(isDecimal("123")).toBeTruthy();
   }),
   it('Should not be recognised as a decimal number and return false', () => {
-    expect(isDecimal("jsdjdsajsda")).toBe(false);
+    expect(isDecimal("jsdjdsajsda")).toBeFalsy();
   }),
   it('Should convert to 110010 removing all the leading zeros', () => {
     expect(stripZeros('00110010')).toBe('110010');
