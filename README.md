@@ -31,29 +31,29 @@ Assignment work
     
   </tbody>
 </table>
-## Testing 
-Smoke test
-Number is captured through input 
-Button press successfully triggers function
-Number converted to 1 bit - Expected 1
-Number converted to 2 bits - 2/3 expected
-Number converted to 3 bits - 4/5/6/7/8
-Number converted to 4 bits
-Number converted to 5 bits
-Number converted to 6 bits
-Number converted to 7 bits
-Number converted to 8 bits/1 byte
-Binary number converted to decimal
-UI Testing
-Integration testing - CICD
 
-## TDD
-#### Test Requirements
+## Using The Application 
+To use the application we would highly recommend using this github link: https://github.com/bluepicnic/SQA-Assignment-2---Number-System-Converter.git
+
+It is possible to do this on your local machine either by cloning the repository and opening in an IDE. After that you would then run npm start to manually test the application or run yarn test to run the unit tests.
+
+Another option would be to create a repl via the link. To do this go to create a new repl and choose import from git using the link above. The code from that point will be run as normal.
+
+## Testing 
+
+
+### TDD
+### Test Requirements
 We adopted Test Driven Development (TDD) as our software development process in order to write quality tests for our code and emphasise our focus on requirements. This aliged with the processes we were following within our github repository, as we ensured we had a CI/CD workflow within github actions and a number of issues to track progress with. 
 
-Tests were written prior to implementing any functionality in order to adhere to TDD at each stage of development. Before developing the front end, we drafted various UI tests to potentially be used later in development. These tests were later refined into test scripts before implementing any javascript code related to functionality, and after HTML interface scripting had finished. These tests, and their results can be found below.
+Tests were written prior to implementing any functionality in order to adhere to TDD at each stage of development. This benefitted us by altering our perspective as developers to focus on tests and interaction before functionality was included, which ensured quality by granting us goals and requirements to adhere to. 
 
- and were added as unit tests to the *index.jest.js* file.
+We made use of TDD's principles of writing tests before code, and ensuring those tests pass by writing just the right amount of code to allow for future refactoring. This could be considered at odds with our coding standards, as TDD's reliance on refactoring means that temporary or "lower quality" code was pushed to our repository in order to ensure tests at all levels could be completed. However, we made sure to rectify these issues in the refactoring stages, by not only producing improved upon code that passed tests, but also adhered more rigorously to our standards. 
+
+
+Before developing the front end, we drafted various UI tests to potentially be used later in development. These tests were later refined into test scripts before implementing any javascript code related to functionality, and after HTML interface scripting had finished. These tests, and their results can be found below.
+
+
 
 ### Manual UI Tests
 <table>
@@ -76,8 +76,8 @@ Tests were written prior to implementing any functionality in order to adhere to
         </ol>
       </td>
       <td>The input field should contain the entered number</td>
-      <td></td>
-      <td></td>
+      <td>Input field contains the entered number </td>
+      <td>Pass</td>
     </tr>
     <tr>
       <td>2.</td>
@@ -90,8 +90,8 @@ Tests were written prior to implementing any functionality in order to adhere to
         </ol>
       </td>
       <td>Relevant output field should contain converted decimal number expressed as a binary number </td>
-      <td></td>
-      <td></td>
+      <td>Output field contains converted decimal number in binary format</td>
+      <td>Pass</td>
     </tr>
     <tr>
       <td>3.</td>
@@ -104,50 +104,50 @@ Tests were written prior to implementing any functionality in order to adhere to
         </ol>
       </td>
       <td>Relevant output field should contain converted binary number expressed as a decimal number </td>
-      <td></td>
-      <td></td>
+      <td>Output field contains converted binary number in decimal format</td>
+      <td>Pass</td>
     </tr>
     <tr>
      <td>4.</td>
-      <td>Error message alert appears when trying to convert binary number using "convert to binary" button and field</td>
+      <td>Error message appears in decimal output field when trying to convert binary number using "convert to binary" button with decimal input field</td>
       <td>
         <ol>
-          <li>Click on the binary input field</li>
+          <li>Click on the decimal input field</li>
           <li>Enter binary number into relevant field</li>
           <li>Click "convert to binary" button</li>
         </ol>
       </td>
-      <td>Alert error message should appear with text "You cannot convert a binary number to binary!" </td>
-      <td></td>
-      <td></td>
+      <td>Error message should appear in output field with text "Error, enter a valid input" </td>
+      <td>Error message appears in decimal-to-binary output field with text "Error, enter a valid input"</td>
+      <td>Pass</td>
     </tr>
     <tr>
      <td>5.</td>
-      <td>Error message alert appears when trying to convert decimal number using "convert to decimal" button and field</td>
+      <td>Error message appears in binary output field when trying to convert decimal number using "convert to decimal" button with binary input field</td>
       <td>
         <ol>
-          <li>Click on the decimal input field</li>
+          <li>Click on the binary input field</li>
           <li>Enter decimal number into relevant field</li>
           <li>Click "convert to decimal" button</li>
         </ol>
       </td>
-      <td>Alert error message should appear with text "You cannot convert a decimal number to decimal!" </td>
-      <td></td>
-      <td></td>
+      <td>Error message should appear with text "Error, enter a valid input" </td>
+      <td>Error message appears in binary-to-decimal output field with text "Error, enter a valid input"</td>
+      <td>Pass</td>
     </tr>
     <tr>
      <td>6.</td>
-      <td>Error message alert appears when trying to enter non-numbers into decimal input field</td>
+      <td>Error message appears when trying to enter non-numbers into decimal input field</td>
       <td>
         <ol>
           <li>Click on the decimal input field</li>
           <li>Enter text string with non-numbers into decimal input field</li>
-          <li>Click "convert to decimal" button</li>
+          <li>Click "convert to binary" button</li>
         </ol>
       </td>
-      <td>Alert error message should appear with text "Please enter a decimal number" </td>
-      <td></td>
-      <td></td>
+      <td>Error message should appear with text "Error, enter a valid input" </td>
+      <td>Error message appears in decimal output field with text "Error, enter a valid input"</td>
+      <td>Pass</td>
     </tr>
     <tr>
      <td>7.</td>
@@ -156,17 +156,21 @@ Tests were written prior to implementing any functionality in order to adhere to
         <ol>
           <li>Click on the binary input field</li>
           <li>Enter text string with non-numbers into binary input field</li>
-          <li>Click "convert to binary" button</li>
+          <li>Click "convert to decimal" button</li>
         </ol>
       </td>
-      <td>Alert error message should appear with text "Please enter a binary number" </td>
-      <td></td>
-      <td></td>
+      <td>Error message should appear in binary output field with text "Error, enter a valid input" </td>
+      <td>Error message appears in binary output field with text "Error, enter a valid input"</td>
+      <td>Pass</td>
     </tr>
    </tbody>
 </table>
 
 ### Automated Unit Tests
+When it came time to write unit tests, which occurred before any javascript code was written, we focused on creating tests that would easily identify if conversion between number systems was successful. These were implemented as unit tests to the *index.test.js* file.
+
+
+As we continued with development, we realised our unit tests only covered a portion of our code, as our code remained modular and testable to adhere to our coding standards and TDD. Each of the functions used within our code had only a single purpose, which was beneficial due to its readability, and maintainability for the sake of refactoring. As such, there were several helper functions which came about due to refactoring which did not have their own unit tests. As soon as we realised this mistake, we rectified it by including them within our unit test scripts. This can be found, along with our other unit tests, below. 
 
 <table>
   <tbody>
@@ -266,27 +270,35 @@ Tests were written prior to implementing any functionality in order to adhere to
 - Decimal to Binary input field will refuse conversion if a number is not detected
 - Binary to decimal input field will refuse conversion if a binary number is not detected
 
+#### Integration Tests
+Integration tests are run in our automated CI pipeline once a pull request has been made. These tests checked the functionality between multiple helper functions to return a correct result allowing for the tests to pass. 
 
+The integration tests are testing the binary to decimal and decimal to binary conversions. These functions hold the bulk of the logic and where the helper functions are called. All integration tests must pass in order for the code to pass the pipeline and be merged.
 
 
 
 ### Stand Up - 11/01 
-Commit and pull request review of initial commit 
+- Commit and pull request review of initial commit 
+- Pull request was sizeable, but only due to the installation of various package modules
+- Git strategy going forward - keeping various branches until we're sure they're not needed anymore
+- Setup of Merge Request Rules and first pass of coding standards
+- Agreed use of GitHub issues
 
-Pull request was sizeable, but only due to the installation of various package modules
-
-Git strategy going forward - keeping various branches until we're sure they're not needed anymore
-Setup of Merge Request Rules and first pass of coding standards
-
-Agreed use of GitHub issues
-
-Retro 12/01 
+### Retro 12/01 
 - CI/CD Workflow preventing current version from being merged
 - CSS needs to be refactored
 
+### Stand Up - 13/01
+- Reviewed issues in git to allocate work for the day
+- Talked about outstanding bugs in the code, spoke about potential fixes
+- Reviewed and merge existing pull requests
+- Discuessed whether we were continuing to meet the IEEE 730 standard
+- Planned to add additional helper functions to validate our code
 
 
 ### Coding standards
+Coding standards are one of the main ways to maintain quality within the code. By following these standards the code should be clean, easier to contribute to and easier to debug.
+
 - Variables should be declared with camel casing
 - Comment code regularly by describing its purpose, rather than what it does, in plain language for all to read
 - Braces should be aligned in a slanted style
@@ -298,6 +310,8 @@ Retro 12/01
 
 
 ### Merge Request Rules
+Merge or pull request rules are there to make sure that multiple collaborators view the code before the code is merged. This is to increase the chances of catching bugs and poor coding standards being pushed into the main branch.
+
 1. Should be approved by someone other than the person that created the MR
 2. Comments should be made on code that does not meet criteria
 3. Code should not be merged if it doesn't pass CI/CD pipeline
@@ -315,6 +329,8 @@ Retro 12/01
 - All requirements have been fulfilled
 
 ### CI Pipeline
+The CI pipeline is there to automate our unit and coverage tests. As a result we aim to have code we no errors and a high percentage of code covered by tests to have cleaner and more robust code. 
+
 Our pipeline consists of running two scripts. One for code coverage and the other for automating the unit tests. 
 
 The unit test pipeline is ran everytime there is a new pull request. Using node we installed yarn and after that using yarn test that triggers the test suite. Then all unit tests are run on the code. If there are any test failures the pipeline will fail and the code should not be merged.
@@ -343,3 +359,8 @@ error message metric: The result of dividing the total number of error messages 
 quality assurance: A planned and systematic pattern of all actions necessary to provide adequate confidence that the item or product conforms to established technical requirements.
 
 
+## Accessibility Audit
+![image](images/image.png)
+
+- Part of the accessibility score was brought down by our choice of IDE, repl.it, which hosts the application in an iframe rather than giving it its own page. Even when separated to a new window, parts of repl.it can still be seen on the page containing our application.
+- We went back and corrected the aspects that bought down our score  
