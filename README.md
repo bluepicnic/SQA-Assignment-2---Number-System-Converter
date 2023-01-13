@@ -49,9 +49,11 @@ Integration testing - CICD
 
 ## TDD
 #### Test Requirements
-We adopted Test Driven Development (TDD) as our software development process in order to write quality tests for our code and emphasise our focus on requirements. This aliged with the processes we were following within our github repository, as we ensured we had a CI/CD workflow within github actions  and a number of issues to track progress with. 
+We adopted Test Driven Development (TDD) as our software development process in order to write quality tests for our code and emphasise our focus on requirements. This aliged with the processes we were following within our github repository, as we ensured we had a CI/CD workflow within github actions and a number of issues to track progress with. 
 
-Tests were written prior to implementing any functionality in order to adhere to TDD at each stage of development. Before developing the front end, we drafted various tests to potentially be used later in development. These tests were later refined before implementing any javascript code related to functionality, and were added as unit tests to the *index.jest.js* file.
+Tests were written prior to implementing any functionality in order to adhere to TDD at each stage of development. Before developing the front end, we drafted various UI tests to potentially be used later in development. These tests were later refined into test scripts before implementing any javascript code related to functionality, and after HTML interface scripting had finished. These tests, and their results can be found below.
+
+ and were added as unit tests to the *index.jest.js* file.
 
 ### Manual UI Tests
 <table>
@@ -205,14 +207,14 @@ Tests were written prior to implementing any functionality in order to adhere to
     </tr>
     <tr>
      <td>5.</td>
-      <td>Error message alert appears when attempting to enter letters into the binary input field</td
-      <td>Error message appears "Error, enter a valid input"</td>
+      <td>Error message alert appears when attempting to enter letters into the binary input field</td>
+      <td>Error message should appear: "Error, enter a valid input"</td>
       <td>Error message appears "Error, enter a valid input"</td>
       <td>Pass</td>
     </tr>
     <tr>
       <td>6.</td>
-      <td>Error message alert appears when attempting to enter decimal numbers into the binary input field</td
+      <td>Error message alert appears when attempting to enter decimal numbers into the binary input field</td>
       <td>Error message appears "Error, enter a valid input"</td>
       <td>Error message appears "Error, enter a valid input"</td>
       <td>Pass</td>
@@ -320,3 +322,24 @@ The unit test pipeline is ran everytime there is a new pull request. Using node 
 The code coverage pipeline tests for the amount source code that is covered by tests and leaving a report with a percentage of code covered. This is checked when a pull request is made. Using node we install npm and run npm test -- --coverage which will return the result.
 
 Both of these yaml files are found in .github/workflows and utilises github actions.
+
+### Standards
+The standard we chose to use during the development lifecycle was IEEE 730. The reason behind this to maintain a level of quality while developing and testing the application. 
+
+A brief description of IEEE 730's purpose would be to create a product that meets established requirements. However, quality depends upon the degree to which those established requirements accurately represent the stakeholders needs, wants and expectations.
+
+Metrics used below to measure standard of code has been taken from
+the Institute of Electrical and Electronics Engineers, Inc (1998). IEEE Std 730-1998 IEEE Standard for Software Quality Assurance Plans IEEE-SA Standards Board. Available at: http://users.csc.calpoly.edu/~jdalbey/308/Resources/IEEE7301989.pdf.
+‌
+
+branch metric: The result of dividing the total number of modules in which every branch has been executed at least once by the total number of modules
+
+critical software: Software whose failure would impact safety or cause large financial or social losses.
+
+domain metric: The result of dividing the total number of modules in which one valid sample and one invalid sample of every class of input data items (external messages, operator inputs, and local data) have been correctly processed, by the total number of modules
+
+error message metric: The result of dividing the total number of error messages that have been formally demonstrated, by the total number of error messages.
+
+quality assurance: A planned and systematic pattern of all actions necessary to provide adequate confidence that the item or product conforms to established technical requirements.
+
+
