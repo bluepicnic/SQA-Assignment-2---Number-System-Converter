@@ -1,10 +1,5 @@
-const DecToBinSubmit = document.querySelector('.dec-to-bin-submit');
-const DecToBinField = document.querySelector('.dec-to-bin-field');
-const DecToBinResult = document.querySelector('.dec-to-bin-result');
-
-const BinToDecSubmit = document.querySelector('.bin-to-dec-submit');
-const BinToDecField = document.querySelector('.bin-to-dec-field');
-const BinToDecResult = document.querySelector('.bin-to-dec-result');
+const DecimalField = document.querySelector('.decimal-field');
+const BinaryField = document.querySelector('.binary-field');
 
 // Chekcs the string value is binary using regex and returns bool
 function isBinary(str) {
@@ -33,7 +28,7 @@ function roundInt(str) {
 
 // converts binary to decimal
 function BinToDecConversion(value) {
-  if (!isBinary(value))
+  if (!isBinary(value) && BinaryField.value.length != 0)
     return "Error, enter a valid input"
   
   return parseInt(value, 2);
@@ -41,7 +36,7 @@ function BinToDecConversion(value) {
 
 // converts decimal to binary
 function DecToBinConversion(value) {
-  if (!isDecimal(value)){
+  if (!isDecimal(value) && DecimalField.value.length != 0){
     return "Error, enter a valid input"
   }
 
@@ -49,23 +44,20 @@ function DecToBinConversion(value) {
   return int.toString(2);
 }
 
-// Button event listener to trigger conversion from decimal to binary
-if (DecToBinSubmit != null && DecToBinField != null && DecToBinResult != null) {
-  DecToBinSubmit.addEventListener('click', () => {
-    let value = DecToBinField.value;
+// on input change event to trigger conversion
+if (DecimalField != null && BinaryField != null) {
+  DecimalField.addEventListener('input', () => {
+    let value = DecimalField.value;
 
     let strippedZeros = stripZeros(value);
-    DecToBinField.value = strippedZeros;
+    DecimalField.value = strippedZeros;
     
-    DecToBinResult.innerHTML = DecToBinConversion(strippedZeros);
+    BinaryField.value = DecToBinConversion(strippedZeros);
   })
-}
 
-// Button event listener to trigger conversion from binary to decimal
-if (BinToDecSubmit != null && BinToDecField != null && BinToDecResult != null) {
-  BinToDecSubmit.addEventListener('click', () => {
-    let value = BinToDecField.value;
-    BinToDecResult.innerHTML = BinToDecConversion(value);
+  BinaryField.addEventListener('input', () => {
+      let value = BinaryField.value;
+    DecimalField.value = BinToDecConversion(value);
   })
 }
 
