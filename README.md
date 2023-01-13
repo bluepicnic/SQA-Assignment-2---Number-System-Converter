@@ -281,11 +281,8 @@ Agreed use of GitHub issues
 Retro 12/01 
 - CI/CD Workflow preventing current version from being merged
 - CSS needs to be refactored
-- Consider capping dec to bin output at 8 bits/1 byte
-- For tomorrow:
-  - Write tests for edge cases below
-  - Implement negative numbers
-  - Implement decimals
+
+
 
 ### Coding standards
 - Variables should be declared with camel casing
