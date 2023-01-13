@@ -41,10 +41,10 @@ describe("Decimal to binary tests ", () => {
     expect(DecToBinConversion(101)).toBe('1100101');
   }),
   it('Should convert to 11111111', () => {
-    expect(BinToDecConversion(255)).toBe('11111111');
+    expect(DecToBinConversion(255)).toBe('11111111');
   }),
   it('Should convert to 1010', () => {
-    expect(BinToDecConversion(10)).toBe('1010');
+    expect(DecToBinConversion(10)).toBe('1010');
   })
 })
 
