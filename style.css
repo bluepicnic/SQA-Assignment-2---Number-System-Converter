@@ -12,7 +12,7 @@ p {
   margin-left: 1em;
 }
 
-input {
+input, button {
   background-color: #222222;
   border: 1px solid #c2c2c2;
   border-radius: 4px;
@@ -21,6 +21,13 @@ input {
   padding: 5px;
 }
 
+button:hover {
+  cursor: pointer;
+  background-color: #c2c2c2;
+  color: #222222;
+}
+
 .conversion-container {
   text-align: center;
 }
+
