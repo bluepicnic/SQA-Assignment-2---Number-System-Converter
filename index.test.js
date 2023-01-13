@@ -52,9 +52,9 @@ describe("Decimal to binary tests ", () => {
   it('Should convert to 1000101', () => {
     expect(DecToBinConversion(-69)).toBe('1000101');
   })
-})
+});
 
-describe("Number system helper functions"), () => {
+describe("Number system helper functions", () => {
   it('Should not be recognised as a binary number and return false', () => {
     expect(isBinary("271924")).toBe(false);
   }),
@@ -73,5 +73,5 @@ describe("Number system helper functions"), () => {
   it('Should convert to 35 rounding the number for binary conversion ', () => {
     expect(roundInt('35.7')).toBe('35');
   })
-}
+});
 
