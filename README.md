@@ -14,19 +14,19 @@ Assignment work
       <td>Luke Jones</td>
       <td>JS Developer (Back end code), tester</td>
       <td>Writing, carrying out and documenting unit tests and processes, binary to decimal system conversion code<td>
-      <td></td>
+      <td>lukejs01</td>
     </tr>
     <tr>
       <td>Cameron Yorke</td>
       <td>QA Tester</td>
       <td>Writing UI tests and test plan, documentation of processes, setup of CI/CD workflows<td>
-      <td></td>
+      <td>bluepicnic</td>
     </tr>
     <tr>
       <td>Jacob Bright</td>
       <td>Full stack developer</td>
       <td>Creation of front end scripts, project styling through CSS, code refactoring and accessibility improvements, decimal to binary system conversion<td>
-      <td></td>
+      <td>bongoSLAP</td>
     </tr>
     
   </tbody>
