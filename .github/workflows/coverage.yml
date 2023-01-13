@@ -1,5 +1,6 @@
 name: Running Code Coverage
 
+# Runs on creation of pull request or once code has been pushed directly to main
 on: [push, pull_request]
 
 jobs:
@@ -16,15 +17,16 @@ jobs:
       uses: actions/checkout@v2
       with:
         fetch-depth: 2 
-
+    # Sets up node and node version
     - name: Set up Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-
+    # Installs npm to run coverage test
     - name: Install dependencies
       run: npm install
-
+    # Installs the jsdom environment
+    # Runs the test coverage command
     - name: Run the tests
       run: |
        npm i jest-environment-jsdom --save-dev
