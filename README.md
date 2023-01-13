@@ -363,4 +363,4 @@ quality assurance: A planned and systematic pattern of all actions necessary to 
 ![image](images/image.png)
 
 - Part of the accessibility score was brought down by our choice of IDE, repl.it, which hosts the application in an iframe rather than giving it its own page. Even when separated to a new window, parts of repl.it can still be seen on the page containing our application.
-- We went back and corrected the aspects that bought down our score  
+- After we went back and corrected the aspects that bought down our score, also running the lighthouse check from outside of the replit site, we were able to raise the accessibility score to 96/100 which is a brilliant result.  
