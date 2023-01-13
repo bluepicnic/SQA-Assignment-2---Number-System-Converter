@@ -28,7 +28,7 @@ function roundInt(str) {
 
 // converts binary to decimal
 function BinToDecConversion(value) {
-  if (!isBinary(value) && BinaryField.value.length != 0)
+  if (!isBinary(value))
     return "Error, enter a valid input"
   
   return parseInt(value, 2);
@@ -36,7 +36,7 @@ function BinToDecConversion(value) {
 
 // converts decimal to binary
 function DecToBinConversion(value) {
-  if (!isDecimal(value) && DecimalField.value.length != 0){
+  if (!isDecimal(value)){
     return "Error, enter a valid input"
   }
 
