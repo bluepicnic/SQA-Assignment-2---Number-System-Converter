@@ -25,7 +25,7 @@ Assignment work
     <tr>
       <td>Jacob Bright</td>
       <td>Full stack developer</td>
-      <td>Creation of front end scripts, project styling through CSS, code refactoring, decimal to binary system conversion<td>
+      <td>Creation of front end scripts, project styling through CSS, code refactoring and accessibility improvements, decimal to binary system conversion<td>
       <td></td>
     </tr>
     
