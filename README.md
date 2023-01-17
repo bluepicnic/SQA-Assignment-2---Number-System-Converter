@@ -13,31 +13,53 @@ Assignment work
     <tr>
       <td>Luke Jones</td>
       <td>JS Developer (Back end code), tester</td>
-      <td>Writing, carrying out and documenting unit tests and processes, binary to decimal system conversion code<td>
-      <td>lukejs01</td>
+      <td>Writing, carrying out and documenting unit tests and processes, binary to decimal system conversion code</td>
+        <td><a href="https://github.com/lukejs01"><img src="images/github-mark.png"></img></a></td>
     </tr>
     <tr>
       <td>Cameron Yorke</td>
       <td>QA Tester</td>
-      <td>Writing UI tests and test plan, documentation of processes, setup of CI/CD workflows<td>
-      <td>bluepicnic</td>
+      <td>Writing UI tests and test plan, documentation of processes, setup of CI/CD workflows</td>
+      <td><a href="https://github.com/bluepicnic/"><img src="images/github-mark.png"></img></a></td>
     </tr>
     <tr>
       <td>Jacob Bright</td>
       <td>Full stack developer</td>
-      <td>Creation of front end scripts, project styling through CSS, code refactoring and accessibility improvements, decimal to binary system conversion<td>
-      <td>bongoSLAP</td>
+      <td>Creation of front end scripts, project styling through CSS, code refactoring and accessibility improvements, decimal to binary system conversion</td>
+      <td><a href="https://github.com/bongoSLAP"><img src="images/github-mark.png"></img></a></td>
     </tr>
     
   </tbody>
 </table>
 
 ## Using The Application 
-To use the application we would highly recommend using this github link: https://github.com/bluepicnic/SQA-Assignment-2---Number-System-Converter.git
+To use the application we would highly recommend using this GitHub link: https://github.com/bluepicnic/SQA-Assignment-2---Number-System-Converter.git
 
-It is possible to do this on your local machine either by cloning the repository and opening in an IDE. After that you would then run npm start to manually test the application or run yarn test to run the unit tests.
+It is possible to do this on your local machine either by cloning the repository and opening in an IDE. After that you would then run the command "npm start" in a suitable console with node.js installed to manually test the application or run "yarn test" to run the unit tests.
 
-Another option would be to create a repl via the link. To do this go to create a new repl and choose import from git using the link above. The code from that point will be run as normal.
+Another option is to use <a href="https://replit.com/">Replit</a> and create a Repl by copying the above link. This can be done from the Replit home page by:
+
+<ol>
+  <li>Clicking "Create" in the top left of the page</li>
+  <img src="images/new repl.PNG"> <br><br>
+  <li>Clicking "Import from GitHub" button at the top of revealed box</li>
+  <img src="images/import from github.PNG"> <br> <br>
+  <li>Paste the GitHub URL in the respective field, and click the "Import from GitHub" button</li>
+  <img src="images/import url.PNG"></img>
+</ol>
+
+
+Once inside the Repl with the imported repository, the code from that point can be run using button on the replit interface. 
+
+
+#### Rules of the Number System Converter
+The developed Number System Converter can convert a decimal number to binary and vice-versa using the respective fields and buttons. 
+<img align="center" src="images/nsc.PNG">
+
+The converter can only convert numbers with integer values, however, as floating point numbers in binary are infinitely recurring and would not work with both the interface and input. The converter itself will round numbers expressed as floating point numbers down to the number expressed on the left of any decimal point entered. 
+
+From an ease of use perspective, all binary numbers expressed within the converter (both input and output) are unsigned. Binary numbers themeselves are also not capped at a certain number of bits or bytes, in order to maximise the amount of numbers that can be converted.  
+
 
 ## Testing 
 
@@ -275,7 +297,7 @@ Integration tests are run in our automated CI pipeline once a pull request has b
 
 The integration tests are testing the binary to decimal and decimal to binary conversions. These functions hold the bulk of the logic and where the helper functions are called. All integration tests must pass in order for the code to pass the pipeline and be merged.
 
-
+## Ceremonies
 
 ### Stand Up - 11/01 
 - Commit and pull request review of initial commit 
@@ -296,7 +318,7 @@ The integration tests are testing the binary to decimal and decimal to binary co
 - Planned to add additional helper functions to validate our code
 
 
-### Coding standards
+## Coding standards
 Coding standards are one of the main ways to maintain quality within the code. By following these standards the code should be clean, easier to contribute to and easier to debug.
 
 - Variables should be declared with camel casing
@@ -309,7 +331,7 @@ Coding standards are one of the main ways to maintain quality within the code. B
 - Use versioning control to assist with collaboration
 
 
-### Merge Request Rules
+## Merge Request Rules
 Merge or pull request rules are there to make sure that multiple collaborators view the code before the code is merged. This is to increase the chances of catching bugs and poor coding standards being pushed into the main branch.
 
 1. Should be approved by someone other than the person that created the MR
@@ -320,7 +342,7 @@ Merge or pull request rules are there to make sure that multiple collaborators v
 6. Check for correct and best coding standards used
 7. New code should have corresponding unit tests
 
-### Definiton of Done
+## Definiton of Done
 - Code has gone through CI/CD pipeline
 - All unit tests have passed
 - No errors or issues within the code
@@ -328,7 +350,7 @@ Merge or pull request rules are there to make sure that multiple collaborators v
 - Project is well documented with README
 - All requirements have been fulfilled
 
-### CI Pipeline
+## CI Pipeline
 The CI pipeline is there to automate our unit and coverage tests. As a result we aim to have code we no errors and a high percentage of code covered by tests to have cleaner and more robust code. 
 
 Our pipeline consists of running two scripts. One for code coverage and the other for automating the unit tests. 
@@ -339,7 +361,7 @@ The code coverage pipeline tests for the amount source code that is covered by t
 
 Both of these yaml files are found in .github/workflows and utilises github actions.
 
-### Standards
+## Standards
 The standard we chose to use during the development lifecycle was IEEE 730. The reason behind this to maintain a level of quality while developing and testing the application. 
 
 A brief description of IEEE 730's purpose would be to create a product that meets established requirements. However, quality depends upon the degree to which those established requirements accurately represent the stakeholders needs, wants and expectations.
@@ -360,7 +382,20 @@ quality assurance: A planned and systematic pattern of all actions necessary to 
 
 
 ## Accessibility Audit
-![image](images/image.png)
+We made use of Google Chrome's built in accessibility auditing tools to determine how accessible our project was. 
 
-- Part of the accessibility score was brought down by our choice of IDE, repl.it, which hosts the application in an iframe rather than giving it its own page. Even when separated to a new window, parts of repl.it can still be seen on the page containing our application.
-- After we went back and corrected the aspects that bought down our score, also running the lighthouse check from outside of the replit site, we were able to raise the accessibility score to 96/100 which is a brilliant result.  
+![image](images/1st-accessibility-audit.png)
+
+Part of the accessibility score was brought down by our choice of IDE, repl.it, which hosts the application in an iframe rather than giving it its own page. Even when separated to a new window, parts of repl.it can still be seen on the page containing our application.
+
+
+After we went back and addressed the aspects that bought down our score, and also ran the lighthouse check from outside of the replit site, we were able to raise the accessibility score to 96/100 which is a brilliant result.
+![image](image.png)
+
+We did this by addressing the following:
+
+- Adding a "lang" attribute to the html tag in our markup. Which assists screen readers announce the words on a page in the correctly declared language, rather than a system default.
+- Including well-named and accessible lables to the elements that store input values, so that those with screen readers are aware of their purpose.
+- Placing heading elements (H1, H2, H3 etc) in sequential order to assist with non-cursor navigation.
+
+Sadly, Replit negates these changes when hosting the application, as it gains effective control over the wider HTML due to how it hosts and displays our project within its web app. With the benefit of hindsight, we would not choose Replit as our hosting platform given these unavoidable accessibility issues.
