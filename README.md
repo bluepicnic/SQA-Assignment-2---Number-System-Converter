@@ -73,11 +73,11 @@ Tests were written prior to implementing any functionality in order to adhere to
 We made use of TDD's principles of writing tests before code, and ensuring those tests pass by writing just the right amount of code to allow for future refactoring. This could be considered at odds with our coding standards, as TDD's reliance on refactoring means that temporary or "lower quality" code was pushed to our repository in order to ensure tests at all levels could be completed. However, we made sure to rectify these issues in the refactoring stages, by not only producing improved upon code that passed tests, but also adhered more rigorously to our standards. 
 
 
+### UI Testing
 Before developing the front end, we drafted various UI tests to potentially be used later in development. These tests were later refined into test scripts before implementing any javascript code related to functionality, and after HTML interface scripting had finished. These tests, and their results can be found below.
 
 
-
-### Manual UI Tests
+#### Manual UI Tests
 <table>
   <tbody align="center">
     <tr>
@@ -191,9 +191,9 @@ Before developing the front end, we drafted various UI tests to potentially be u
 ### Automated Unit Tests
 When it came time to write unit tests, which occurred before any javascript code was written, we focused on creating tests that would easily identify if conversion between number systems was successful. These were implemented as unit tests to the *index.test.js* file.
 
-
 As we continued with development, we realised our unit tests only covered a portion of our code, as our code remained modular and testable to adhere to our coding standards and TDD. Each of the functions used within our code had only a single purpose, which was beneficial due to its readability, and maintainability for the sake of refactoring. As such, there were several helper functions which came about due to refactoring which did not have their own unit tests. As soon as we realised this mistake, we rectified it by including them within our unit test scripts. This can be found, along with our other unit tests, below. 
 
+#### Conversion Function Unit Tests
 <table>
   <tbody>
     <tr>
@@ -283,14 +283,61 @@ As we continued with development, we realised our unit tests only covered a port
   </tbody>
 </table>
 
-##### UI Tests
-- User is able to input numbers (and only numbers) into the input field
-- "Convert to decimal" button press triggers decimal conversion JS function
-- "Convert to binary" button press triggers binary conversion JS function 
-- Output field displays decimial conversion result in Binary
-- Output field displays binary conversion conversion result as decimal
-- Decimal to Binary input field will refuse conversion if a number is not detected
-- Binary to decimal input field will refuse conversion if a binary number is not detected
+#### Input Validation (utility) function Unit tests
+<table>
+  <tbody>
+    <tr>
+      <th>No.</th>
+      <th>Actions</th>
+      <th>Expected Outcome</th>
+      <th>Actual Outcome</th>
+      <th>Test result</th>
+    </tr>
+    <tr>
+     <td>1.</td>
+      <td>Check if the value "271924" is a binary number</td>
+      <td>Number should not be recognised as binary number and isBinary() function returns false</td>
+      <td>Number is not recognised as binary number and isBinary() function returned false</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+     <td>2.</td>
+      <td>Check if the value "11110000" is a binary number</td>
+      <td>Number should be recognised as binary number and isBinary() function returns true</td>
+      <td>Number is recognised as binary number and isBinary() function returned true</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+     <td>3.</td>
+      <td>Check if the value "123" is a decimal number</td>
+      <td>Number should be recognised as decimal number and isDecimal() function returns true</td>
+      <td>Number is recognised as decimal number and isDecimal() function returned true</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+     <td>4.</td>
+      <td>Check if the value "jsdjdsajsda" is a decimal number</td>
+      <td>Number should not be recognised as decimal number and isDecimal() function returns false</td>
+      <td>Number is not recognised as decimal number and isDecimal() function returned false</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+     <td>5.</td>
+      <td>Number "00110010" should have leading zeros removed</td>
+      <td>Number should be converted to "110010" and stripZeros function returns converted number</td>
+      <td>Number is converted to "110010" and stripZeros() function returned converted number</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>6.</td>
+      <td>Floating point number "35.7" is rounded to integer using floor rounding (rounding down)</td>
+      <td>Number should be rounded down to 35 and roundInt() function returns rounded number</td>
+      <td>Number is rounded down to 35 and roundInt() function returned rounded number</td>
+      <td>Pass</td>
+    </tr>
+  </tbody>
+</table>
+
 
 #### Integration Tests
 Integration tests are run in our automated CI pipeline once a pull request has been made. These tests checked the functionality between multiple helper functions to return a correct result allowing for the tests to pass. 
@@ -298,6 +345,11 @@ Integration tests are run in our automated CI pipeline once a pull request has b
 The integration tests are testing the binary to decimal and decimal to binary conversions. These functions hold the bulk of the logic and where the helper functions are called. All integration tests must pass in order for the code to pass the pipeline and be merged.
 
 ## Ceremonies
+When it came to ceremonies, we initially did not have plans to hold either stand ups or retros regularly, but rather on an ad-hoc basis. This was because we felt that performing the ceremonies on a scheduled basis would not allow us to raise legitimate and concerns or issues, or report on our work accurately out of a sense to provide meaningful progress update. 
+
+However, our strategy in the end was more structured than orginally intended. In essence, we held either a stand up OR a retro on a daily basis, changing based on whether we felt a review at the end of the day was required, or a briefing on what was due to happen throughout a given day. 
+
+Below are summaries of the items discussed at each ceremony. 
 
 ### Stand Up - 11/01 
 - Commit and pull request review of initial commit 
@@ -316,6 +368,11 @@ The integration tests are testing the binary to decimal and decimal to binary co
 - Reviewed and merge existing pull requests
 - Discuessed whether we were continuing to meet the IEEE 730 standard
 - Planned to add additional helper functions to validate our code
+
+### Retro - 14/01
+- Agreed to abide by the outcome of the Lighthouse accessibility report, and make changes to the HTML in order to improve the score
+- Reviewed content of README, agreed to add additional sections and images
+- Agreed to close issues that met the definition of done
 
 
 ## Coding standards
@@ -343,11 +400,15 @@ Merge or pull request rules are there to make sure that multiple collaborators v
 7. New code should have corresponding unit tests
 
 ## Definiton of Done
+The following checklist was our reference to decide when issues raised within Github issues could be marked as "Closed". By definiing what Done meant to us as a team, we had a foundation on which we could apply to all issues raised with certainty when a piece of functionality was complete. This allowed us to control our backlog and stay on top of our workload, as we now had a measurable metric to control when items were done. 
+
+As many of our issues concerned the implementation code and markup, our definition of done focuses on passing unit tests, reviewing code via pull requests and utilising our CI/CD workflows. Where these were not relevant to an issue, such as purely for documentation for example, we only checked against the relevant points. In the case of documentation, this would be the latter two checks. 
+
 - Code has gone through CI/CD pipeline
 - All unit tests have passed
 - No errors or issues within the code
 - All pull requests have been reviewed by members of the team with relevant comments
-- Project is well documented with README
+- Issue is well documented within README
 - All requirements have been fulfilled
 
 ## CI Pipeline
@@ -355,9 +416,13 @@ The CI pipeline is there to automate our unit and coverage tests. As a result we
 
 Our pipeline consists of running two scripts. One for code coverage and the other for automating the unit tests. 
 
-The unit test pipeline is ran everytime there is a new pull request. Using node we installed yarn and after that using yarn test that triggers the test suite. Then all unit tests are run on the code. If there are any test failures the pipeline will fail and the code should not be merged.
+The unit test pipeline is ran everytime there is a new pull request. Using node we installed yarn and after that using yarn test that triggers the test suite. Then all unit tests are run on the code. If there are any test failures the pipeline will fail and the code should not be merged. A screenshot of test suit results can be found below.
 
-The code coverage pipeline tests for the amount source code that is covered by tests and leaving a report with a percentage of code covered. This is checked when a pull request is made. Using node we install npm and run npm test -- --coverage which will return the result.
+<img src='images/cicd unit tests.PNG'>
+
+The code coverage pipeline tests for the amount source code that is covered by tests and leaving a report with a percentage of code covered. This is checked when a pull request is made. Using node we install npm and run npm test -- --coverage which will return the result. An example of code coverage in action can be seen below.
+
+<img src='images/code coverage.PNG'>
 
 Both of these yaml files are found in .github/workflows and utilises github actions.
 
